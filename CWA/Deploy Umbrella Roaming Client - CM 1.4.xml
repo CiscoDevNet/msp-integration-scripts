@@ -1,0 +1,76 @@
+﻿<LabTech_Expansion
+	Version="230.135"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>0</ScriptId>
+				<FolderId>0</FolderId>
+				<ScriptName>Deploy Umbrella Roaming Client - CM 1.4</ScriptName>
+				<ScriptNotes>Created by Corey Mandell ( Cisco Contract )  [corey.mandell@contuit.com]
+Ver. 1.4
+ 
+Revisions: 
+1.1 - added prompts to include OrgId, UserId,OrgFingerprint, Hide UI and Hide Add/Remove 
+1.2 - added EDFs to include No Autosuffix and No NXDOMAIN 
+1.3 - modified to download url for the setup.msi because the deployment site for the Umbrella setup was removed by Cisco 
+1.4 - removed the Root Certificate function; see Cisco Umbrella scripts if the Root Cert deployment needs to be added to this script
+
+The following variables are defined via EDFs:
+ORG_ID=Organization ID (organization unique) 
+User_ID=UserID (MSP User Login unique) 
+ORG_Fingerprint=Organization Fingerprint (organization unique) 
+HIDE_ARP=Hides Add/Remove Programs entry in Control Panel 
+HIDE_UI=Hides system tray icon 
+NO_AUTOSUFFIX=Don’t add domains present in the ‘DNS Suffixes’ settings
+NO_NXDOMAIN= If a DNS query sent to Umbrella returns an NXDOMAIN, query the local DNS servers before giving up.</ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>1</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAFWPQQrCMBRE94J3yAEa8pNWa8snGytuFERF12nyF1mYlrQFe3tpUairYWZ4A4Mnbyl0VJneaLyPLWmJYla8DmHfDKGnqAHFwuHh3fo4MaSf5AJ1zowJq8jSq6bIIE+YAimZKlMoIWeXM4oFgzcbfds/KHa+CdP4f/Dtj4N3WjlpttkGOFFhuZTkeG2M4qAAZA67LFPpj58BFMtL69UHqfaTp+IAAAA=</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAO1cbW+qSBT+vsn+h0k25u4mV+RV601rdBV7Saw2UrdfbmJGmLakCC4zXNv99ctrqxRoZRmFZj+VYXDAh3Oec55zxp6rmmNsyAgS2Pv1FwDOwzEOBt5QfiIO9GfHBjJ1DFrxxDV04BoR5ODeQpXnymg5ns+ulsPZdKxcLsfKRP46m1+mnR4r00t5fj1XpjdvJs9bO+tGd7o07RU0d24dPuJf3iWGbfU4vtvtsHy7w5639mf2Lr90Db3H6xxsixLbRKirNTkO6c0VhHyT5VmW67BnosgL8SrBBwJIWruYRMupBG1ennCgkeBJzlvRUXR+7FrBWNH9uZ3RLoZcAlM+MRYSYzExlnaAsR3S82Hw/0bnhrZFDMtF/vmX42huhifG2gg+Eh9GM4qlI4vA4Mt4s7vDXUheUciBhc+BhZe6VQaG654MGU7IQab3zbNx4+751rB0e4tnauQ3XKmAcYcDxounA4zPBUy29GNgxhcwsk4uZhxN98uD7ObBwGANtQfDQsA7tGwCHNeyDOseQBDBCGYb5HhP5p3Dz5ig9VeAnoxwHDwSQwVmoQDM7dPBzElHYzmxVsi8w3JHclqpXkR3QGQYIfxI7A0l3Nr1wu2wAEEXuk4BNz2rY5zQTMN7JvAzzMmBfQfIA0qJHmoQPRjgn7JGUxXoNgrXwu5m40EFDAsTaJr+xf4Scxuu/eNheANvbRU5/m3oRJyzstPqzxJwunUC5sB4Q5cDuAKKpLpxZ/iAtMex7cw8H3QMHdGBrGaahBVyIFshFvISKzSls07br0aITdhhV02WlVip3eVWbFdLR7HX1+z1xiWerer96BJ+H9ie62jLZ4QtO5oXDgO6gJA5nVv7tZ9MmJNAJLHkMwDk0oHzLD3CPmHpYj6gBSRLlXnyOO5eQM1UnCHlJwP7CY8SZjN0YKuXoJHaR0tWuAKS5YRe6JeGMu1JlSfy8AYMZ4vpze/TwZX8B/DL6QB7abChecnz7Xd5LgN/BlyAL4v1ykGmCZfz4RcwmI5ATGPKyJtuvAaURlk8OTAdBPXnyNKR/jGeLKCMKs+TR3H6AgrlhE6fKyn/RPdGKCBjq41lnmLQhLB0LUM12khiDoQNk+Cfmm44jR8bqD3Ce4R/uBGYdCrftWo8cXnm90DIBn9rtWK8mjramPbz2nsUBguMi5tbhEmTY+Aa/mNbcIsZjz5bUUUitNTlrTJdCgzLCBLHrLGRQap5r+mHioi72flwknnZQqk9n6WhuEq+KK6olb+BL4k9mwHrt4imF/vuciDKpQuok7FxY2tYAcQB2Cn4gjtoePEdEBvo9tYybagzQN5vAzF0ynJ8rWSVmJPp9hphqTQ7AUvJ0ZKm2/C/M9SIvPbeSCMjMXuJqYkS6vjlLUZB1i+qNuI0cQrXqMGA38YDZbKYy+nJXOba0YoBpiBaImX5aFVp/x2XrwI/S/GVL6D0Kpstp9NuyXxRr55VLi/HnZLB/Y6HeX893oUE6ZQIt176LI9wvciFnpAGWgb4WB4BWn9boDXJvzo23/BT5ImA2fxyqYwu+un74frB/M6muIt+3g65PvC32wXrZey764PvykheLpQLLjwazK8vODrGkKU5C6eSNI3hiHUmvlZdMT6vfJ5hOS/nkymIGpafJra9Gdqu5YX2QvmzULqcPGFkC5uKMTPQrAIJ9WqQ5ca3CCfgk7TrBzQAQiD9vHIvocSupiFMqfMvfJ5WWKZvJp27neHcUlatN3pXoYT4UKFXqJVyO2LsEArInXxgeKr1mbwW907TIcPSYstRQxe+c8100zsUxNKFEU0Q+ZyfBwSRkAatld4KE6jupMiDqP+W2PoHFv2yuliZlPkOu5Uuk6iim7818ojpS+nb7KjC9k6/P32fSMmIFVAaVU34soqHuoHhyi9N3tkOIP52063tPOLw+Y7zgwOxXnIkF2Y68UQsoDwqK9jS0tmS4SqgKqrqt+83iPbUWtgtYgAdXGslKyreEBooE3n0tk1TWhMobfH0HpD4fw8o0+I/YQ/ojRosmSQ+URfoQPLdQhyXyzx0KSVLWeKnkm2BanPwcHZ1PZFv0mlYXQyHsqr+Fxp+XZ/YH2Pi8vcZfrpUuFbdn3cYOWMXb8m/wK3XT6EKqVgYAhm7H9KPo1yleumyE7irdIoGTzyO/vPOv67T9/uIRwAA</ScriptData>
+				<ScriptVersion>1299702670</ScriptVersion>
+				<ScriptGuid>2d1a6450-ee9c-11ed-baa2-020017084423</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters>USERID_FROM_CONFIG_FILE,ORGID_FROM_CONFIG_FILE,FINGERPRINT_FROM_CONFIG_FILE</Parameters>
+			</Table>
+		</NewDataSet>
+		<ExtraDataField>
+			<NewDataSet>
+				<Table>
+					<ID>613</ID>
+					<Form>1</Form>
+					<Name>Exclude OpenDNS URC</Name>
+					<Sort>0</Sort>
+					<NoBreak>0</NoBreak>
+					<FType>1</FType>
+					<Section>OpenDNS</Section>
+					<UnEditable>0</UnEditable>
+					<Collapsed>0</Collapsed>
+					<Fill>Check this box if this computer should not have the Roaming Client installed.</Fill>
+					<LtGuid>be0a2503-5876-11e4-a70b-00505691b09c</LtGuid>
+					<IsPassword>false</IsPassword>
+					<IsEncrypted>false</IsEncrypted>
+					<IsHidden>false</IsHidden>
+					<IsRestricted>false</IsRestricted>
+					<ViewPermissions></ViewPermissions>
+					<EditPermissions></EditPermissions>
+				</Table>
+			</NewDataSet>
+		</ExtraDataField>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>0</FolderID>
+					<ParentID>0</ParentID>
+					<Name></Name>
+					<GUID></GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>

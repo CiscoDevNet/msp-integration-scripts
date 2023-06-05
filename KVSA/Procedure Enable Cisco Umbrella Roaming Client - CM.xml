@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kaseya.com/vsa/2008/12/Scripting">
+  <Procedure name="Enable Cisco Umbrella Roaming Client - CM" treePres="3" id="1522823129" folderId="198572270152425" treeFullPath="myProcedures - corey.mandell@contuit.com">
+    <Body description="">
+      <Statement name="WriteFile" continueOnFail="false">
+        <Parameter xsi:type="StringParameter" name="Path" value="c:\cabs\enableembrella.bat" />
+        <Parameter xsi:type="StringParameter" name="ManagedFile" value="VSASharedFiles\OpenDNS\enableembrella.bat" />
+        <Parameter xsi:type="BooleanParameter" name="DeleteAfter" value="False" />
+      </Statement>
+      <Statement name="ExecuteFile" continueOnFail="false">
+        <Parameter xsi:type="StringParameter" name="Path" value="c:\cabs\enableembrella.bat" />
+        <Parameter xsi:type="StringParameter" name="Arguments" value="" />
+        <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+        <Parameter xsi:type="BooleanParameter" name="WaitComplete" value="False" />
+      </Statement>
+    </Body>
+  </Procedure>
+</ScExport>

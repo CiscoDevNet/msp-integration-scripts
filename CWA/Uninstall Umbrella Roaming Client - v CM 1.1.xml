@@ -1,0 +1,66 @@
+﻿<LabTech_Expansion
+	Version="230.135"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>0</ScriptId>
+				<FolderId>0</FolderId>
+				<ScriptName>Uninstall Umbrella Roaming Client - v CM 1.1</ScriptName>
+				<ScriptNotes>Created by Corey Mandell ( Cisco Contract )  [corey.mandell@contuit.com]
+Ver. 1.1
+
+This script will attempt to use the umbrella install package and the wmic to uninstall  the Umbrella Roaming Client. 
+
+Revisions: 
+1.1 -changed the download url</ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>0</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAFWPzQrCMBCE74LvkAdoyF9tallyURHEgqh4T9M95JKWtAH79tKiUE/D7My3MHD1DsOARztaA8+pRyOALQr3FA5dCiNGw4GtHJzevY8zg6buQmunjFxSQCJURiSXkghe7YpKaXKrga3a8HDR9+ML4+C7ML/9P3zzc/Kt0UWpc9koirh3VAhsaWOtpFxyLjQv81yqH78AwNZjtpsPogdhD9wAAAA=</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAO1aW0/jOBh9X2n/g18qdh/SJk7aFMRUg9oyg8QU1MLwUgm5jkstctvYobC/ft00DaVMTMnEtEH7RGynxj4+3+V8zvEIRzTkPcRR588/ADhetlnSEM3+I4/QYvSUEtdhoLEauEQR8ggn0VrfNzeYIHetYznZT/ESDfyOcdx42fHirW8xdTp2q21bcGJqhBxizTCIo00QgpoOdd2w9bZlQXM1S/KDZM2N9UWn0404CbNdnGCeLiB9SvtPYz9pnzmLsbXW+iaNjU3Djba50bY22s01PIKId3Sx3sXftK8b+Jz6MVn0Z8/p2AU7px5NfrJ6TEfOfIf4HCWbEaPrzXVInlGQwAJlsMDDfGA6R5cI36M7Ig6UTilO/v9xIx3cMWaGvTPQYFMCWslsMgog05IiY6ikk7kXdILvB02DhmVbbbNltXfHK10CnvFrpLJ++BKxzldGogccxD7/mr5hvgtDs1JuTM677ozg+9MgSvmnhHNWNTlnyziXUSiHe60c7sFfM65zdO1Tn3HkuqeIusRJX7OkwDYrRUTDkuDZPRrfUN8J5mx8fjV6wONwSUg2jr1JRFwXjUeEx2HdYzQHcj0H8mdoC1l7q5rslWYvFyHxe4MRuE6xBdilYhkgBR34AQdTwW6nDk44J14otnkHxOn4boCcuhIvYavDWWVch822zL/2UsyUQNauKDV1ieTozDgP2VGjsbJ7zSGhGzx5Yi11ZtZjps0J45pRRx76N/DRnNVx4DWGAfIESbsJkW9vzga3Zl2vm01D4jFqLmcP2KFRbQt3s+lW9ELe5PB/l63eZRvVEppSc3idrG4LopGTaryeUZ5lGAWElhxNpf64nLinxF8bBdTX7pB8owDyEcrB+ExSa9OnlQxVRVXWG/lTmn7mSPzfxayAgNqHnHNRxsqFTERb8kgwaDyC90Ro0PhHTcXJKCCg5DYMdxU+aqOZAG1IWOzymhqwCqig3YElrZCsYZWTuLRzEperGWUAJbMC8RT47hN4QC51RGyOQBgFTow5A3yGOEARATiOIrFB8VbqYEkWv1+VWVJ/ArfLfAoIrE94GkRgLM5hkRwRP4jvZoAJR0LEwYgzIMCh7D4X754Y7LoE+XG4HeSlCySVkL+RImURPynrP6kp6JeudcydR3uoBqkCOmbvo/3coxhcLl0imCem6iOPfDnIJE5aGAHLysgBwIKPIFaai8LSdc4nDvmwdI2jFCy5AX+Ix6uo0mlK7Ljkq3FYsZshW5a59M/73SvQvbgeXP01OPnR/xucDi9+gEUVi2LCwM33/rAPFiPgC8j83u2wewBOBj3QDbww5iQ664nhGk5b1Mmx5uyGbttyWqGbO1i6KFJ5QG1ZZmlPpk0DWrpmIjTRLGzZ2sTBLQ1OsEnwhJBp3u1Hp/Z8NrUc1ItV2WHpMmrvrupYjAX52TR2he7JwjlRVLmEpSshtXdyH/cVEiwgWHb4GdK28fuFLyuXS2YBxbIP8buQmU4THAEPnm1UjYWa1bqlWZReP8hCzUrdurz1PcGrekrJNCqgRvbBOG3JTXXZfCqgP/b2M2a1l1LmLnTIqp1+2f8fnI0c1egvAAA=</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>768742b3-ee9c-11ed-baa2-020017084423</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<ExtraDataField>
+			<NewDataSet>
+				<Table>
+					<ID>928</ID>
+					<Form>1</Form>
+					<Name>OpenDNS URC Installed</Name>
+					<Sort>1</Sort>
+					<NoBreak>0</NoBreak>
+					<FType>1</FType>
+					<Section>OpenDNS</Section>
+					<UnEditable>0</UnEditable>
+					<Collapsed>0</Collapsed>
+					<Fill>This box will be checked by the installation script and used to exclude the machine from further installation attempts unless unchecked.</Fill>
+					<LtGuid>7bf51240-3aab-4c47-bdc6-2bc3ecbeefad</LtGuid>
+					<IsPassword>false</IsPassword>
+					<IsEncrypted>false</IsEncrypted>
+					<IsHidden>false</IsHidden>
+					<IsRestricted>false</IsRestricted>
+					<ViewPermissions></ViewPermissions>
+					<EditPermissions></EditPermissions>
+				</Table>
+			</NewDataSet>
+		</ExtraDataField>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>0</FolderID>
+					<ParentID>0</ParentID>
+					<Name></Name>
+					<GUID></GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>

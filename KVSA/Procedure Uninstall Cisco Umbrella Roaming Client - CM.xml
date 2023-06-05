@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kaseya.com/vsa/2008/12/Scripting">
+  <Procedure name="Uninstall Cisco Umbrella Roaming Client - CM" treePres="3" id="648761055" folderId="198572270152425" treeFullPath="myProcedures - corey.mandell@contuit.com">
+    <Body description="">
+      <Statement description="Uninstall Umrella Roaming Client  -CM" name="ExecuteShellCommand" continueOnFail="false">
+        <Parameter xsi:type="StringParameter" name="Command" value="wmic product where name=&quot;Umbrella Roaming Client&quot; call uninstall" />
+        <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+        <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+      </Statement>
+    </Body>
+  </Procedure>
+</ScExport>

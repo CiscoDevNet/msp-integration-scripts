@@ -1,0 +1,42 @@
+﻿<LabTech_Expansion
+	Version="230.135"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>0</ScriptId>
+				<FolderId>0</FolderId>
+				<ScriptName>Deploy Cisco Umbrella Root Certificate - CM v 1.1</ScriptName>
+				<ScriptNotes>Created by Corey Mandell ( Cisco Contract )  [corey.mandell@contuit.com]
+Ver. 1.1
+ 
+Revisions: 
+1.1 - added as a sub-script to be called by the ' Deploy Umbrella Roaming Client (advanced)' script
+</ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>0</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAFWPzQrCMBCE74LvkAdoyCa29IclFxUvFkSL95jsIZe0pA3Yt5cWhXoaZme+hcGrtxRGOpnJaOzmgbREsSreUzj2KUwUNaDYODy/Bx8XhnSXaHRmzlhrZiYhYwqUYmVTyEbV7Nai2JTxYaMfpifF0fdh+fp/+OaX5J0unCzAVoYT1ZZLSY6/jFEcFIAsocpzdfjxK4Biu2W/+wDuJED+2wAAAA==</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAO2YW2vbMBTH3wf7DiLQR18k24kTgiG4FwJjGwvbUyEoltIKHCtIcpd9+8mO3DpZ4ybDbhbYU3SOLpF+R/9zkMezRLC1usYKRx8/ADDe2rI0tHmzUQIXvbeMpkQCp+r4igVeUUVFzXeX8gVOa47tYj/0IMazCI6dXcfOqLuckSggMHCTEFuUDhMLQkqsBcbIcpHrwoEb+j7yqlXKCeWenfqmzXIzRdfPp5gkymzAtIz/Ns9Ke0qKvppVPyTcOzTas70929+zgxoPLlTk6v0Wv8YX80yxLKeF/7lt+r7IT2zFyilV0/RMM0IzhcvD6N66WUfyQqEBC2rC4g0Pg4lG1/xnlnJMYirU2DHeM8NC/vloBX4DrXh0HzOZ8Pn31ULQNMWdEIOXdL2Q26C76FGptRw5DvH6eUhovnnAwwW3k5TnZCn0YeyMKifRd48tWYIVlc4u4Pk3ztU8nth6zOuwi6B8VuwJ3785E+2GpeBiWqeEB11SeCA86T6/zXCfvnuA7Wi6WmtKtbRyGmXvkiijphQbv9xuQEy2BUvMUkpscLNh+iwPQJb/C3gGqBBc2J0kFr9tprBLpjB4t4IetA0Gna+g/6G7du9Q/3RUFoL+wA+9vh+eLw/2G5gV9SdXLAUWJkQqLiiw9DaoWAsmdXsJrCcgdCoEvVMyZq+TAAwuKTEO3AbsV/JRIxNU5qm6OlBewgPlpZ5Ue2UIQBUCUIQAxJMe0NGkBCgOypjar9ehSjGzPEmolGaQ3xiD8JJicHRx2takghcriQCW6XZNCFuM71uzhv9r1oFXQuuv0LMXrV0Jtvyo+otX1b9QuI5Wr9zCW+Zp+ssIWIv5KAl3o1zY+kOpU+kGDaDblm7rj5sjpFvZ5kPhbxoMPwA3FAAA</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>5d150c8a-ee9c-11ed-baa2-020017084423</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>0</FolderID>
+					<ParentID>0</ParentID>
+					<Name></Name>
+					<GUID></GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>

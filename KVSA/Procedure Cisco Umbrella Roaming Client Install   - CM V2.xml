@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kaseya.com/vsa/2008/12/Scripting">
+  <Procedure name="Cisco Umbrella Roaming Client Install   - CM" treePres="3" id="907604" folderId="198572270152425" treeFullPath="myProcedures - corey.mandell@contuit.com">
+    <Body description="">
+      <Statement description="Cisco Umbrella Roaming Client Install   - CM&#xD;&#xA;v1.3    04/02/2023&#xD;&#xA;Author Corey Mandell (Cisco Contractor) - This was part of a project that derived this agent procedure by researching the Internet Archives and input from Kaseya  customers (referenced contributors included Jason Phelps, Cisco)&#xD;&#xA;Revisions:&#xD;&#xA;1.1 - added prompts to include  OrgId, UserId,OrgFingerprint, Hide UI and Hide Add/Remove&#xD;&#xA;1.2 - added prompts to include  No AUtosuffix and No NXDOMAIN&#xD;&#xA;1.3 - modified to download url for the setup.msi because the deployment site for the Umbrella setup was removed by Cisco &#xD;&#xA;Variables can be found in the MSP console&#xD;&#xA;The following variables will be propted at run time&#xD;&#xA;ORG_ID=Organization ID (organization unique)&#xD;&#xA;User_ID=UserID (MSP User Login unique)&#xD;&#xA;ORG_Fingerprint=Organization Fingerprint (organization unique)&#xD;&#xA;HIDE_ARP=Hides Add/Remove Programs entry in Control Panel&#xD;&#xA;HIDE_UI=Hides system tray icon&#xD;&#xA;NO_AUTOSUFFIX=Don’t add domains present in the ‘DNS Suffixes’ settings in netwo" name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="Organization ID" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="ORG_ID" />
+      </Statement>
+      <Statement name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="User ID" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="USER_ID" />
+      </Statement>
+      <Statement name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="Organization Fingerprint" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="ORG_FINGERPRINT" />
+      </Statement>
+      <Statement name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="Hide Add/Remove Programs (0=no,1=yes)" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="HIDE_ARP" />
+      </Statement>
+      <Statement name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="Hide Tray Icon (0=no,1=yes)" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="HIDE_UI" />
+      </Statement>
+      <Statement name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="Don’t add domains present in the ‘DNS Suffixes’ (0=no,1=yes)" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="NO_AUTOSUFFIX" />
+      </Statement>
+      <Statement name="GetVariable" continueOnFail="false">
+        <Parameter xsi:type="EnumParameter" name="VariableType" value="Prompt" />
+        <Parameter xsi:type="StringParameter" name="SourceContent" value="Locally verify an NXDOMAIN (0=no,1=yes)" />
+        <Parameter xsi:type="StringParameter" name="VariableName" value="NO_NXDOMAIN" />
+      </Statement>
+      <Statement name="WriteScriptLogEntry" continueOnFail="false">
+        <Parameter xsi:type="StringParameter" name="Comment" value="Got script variables" />
+      </Statement>
+      <If description="">
+        <Condition name="CheckVariable">
+          <Parameter xsi:type="StringParameter" name="VariableName" value="#HIDE_UI#" />
+          <Parameter xsi:type="EnumParameter" name="Condition" value="NotEquals" />
+          <Parameter xsi:type="StringParameter" name="Value" value="" />
+        </Condition>
+        <Then>
+          <If description="">
+            <Condition name="CheckVariable">
+              <Parameter xsi:type="StringParameter" name="VariableName" value="#HIDE_ARP#" />
+              <Parameter xsi:type="EnumParameter" name="Condition" value="NotEquals" />
+              <Parameter xsi:type="StringParameter" name="Value" value="" />
+            </Condition>
+            <Then>
+              <If description="">
+                <Condition name="CheckVariable">
+                  <Parameter xsi:type="StringParameter" name="VariableName" value="#USER_ID#" />
+                  <Parameter xsi:type="EnumParameter" name="Condition" value="NotEquals" />
+                  <Parameter xsi:type="StringParameter" name="Value" value="" />
+                </Condition>
+                <Then>
+                  <If description="">
+                    <Condition name="CheckVariable">
+                      <Parameter xsi:type="StringParameter" name="VariableName" value="#ORG_FINGERPRINT#" />
+                      <Parameter xsi:type="EnumParameter" name="Condition" value="NotEquals" />
+                      <Parameter xsi:type="StringParameter" name="Value" value="" />
+                    </Condition>
+                    <Then>
+                      <If description="">
+                        <Condition name="CheckVariable">
+                          <Parameter xsi:type="StringParameter" name="VariableName" value="#ORG_ID#" />
+                          <Parameter xsi:type="EnumParameter" name="Condition" value="NotEquals" />
+                          <Parameter xsi:type="StringParameter" name="Value" value="" />
+                        </Condition>
+                        <Then>
+                          <If description="">
+                            <Condition name="TestRegistryKey">
+                              <Parameter xsi:type="StringParameter" name="Path" value="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Umbrella_RC" />
+                              <Parameter xsi:type="EnumParameter" name="Condition" value="NotExists" />
+                            </Condition>
+                            <Then>
+                              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella Roaming Client not detetected. Proceeding with installation..." />
+                              </Statement>
+                              <Statement name="GetURL" continueOnFail="false" osType="Windows">
+                                <Parameter xsi:type="StringParameter" name="URL" value="https://umbrella-deployment.s3.us-west-1.amazonaws.com/RoamingClient_WIN_3.0.351.msi" />
+                                <Parameter xsi:type="StringParameter" name="ResponseFileName" value="#vagentconfiguration.agenttempdir#\Setup.msi" />
+                                <Parameter xsi:type="BooleanParameter" name="WaitComplete" value="True" />
+                              </Statement>
+                              <If description="">
+                                <Condition name="TestFile">
+                                  <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#\Setup.msi" />
+                                  <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                                  <Parameter xsi:type="StringParameter" name="Value" value="" />
+                                </Condition>
+                                <Then>
+                                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                    <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella agent written successfully." />
+                                  </Statement>
+                                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                    <Parameter xsi:type="StringParameter" name="Comment" value="Running install command: msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\Setup.msi&quot; /QN ORG_ID=#ORG_ID# ORG_FINGERPRINT=#ORG_FINGERPRINT# USER_ID=#USER_ID# HIDE_UI=#HIDE_UI# HIDE_ARP=#HIDE_UI#" />
+                                  </Statement>
+                                  <If description="">
+                                    <Condition name="TestFile">
+                                      <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#\Setup.msi" />
+                                      <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                                      <Parameter xsi:type="StringParameter" name="Value" value="" />
+                                    </Condition>
+                                    <Then>
+                                      <Statement name="ExecuteShellCommand" continueOnFail="false" osType="Windows">
+                                        <Parameter xsi:type="StringParameter" name="Command" value="msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\Setup.msi&quot; /QN ORG_ID=#ORG_ID# ORG_FINGERPRINT=#ORG_FINGERPRINT# USER_ID=#USER_ID# HIDE_UI=#HIDE_UI# HIDE_ARP=#HIDE_ARP# NO_AUTOSUFFIX=#NO_AUTOSUFFIX# NO_NXDOMAIN=#NO_NXDOMAIN#" />
+                                        <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+                                        <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+                                      </Statement>
+                                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                        <Parameter xsi:type="StringParameter" name="Comment" value="Installation complete. Detecting if install was successful...." />
+                                      </Statement>
+                                      <If description="">
+                                        <Condition name="TestRegistryKey">
+                                          <Parameter xsi:type="StringParameter" name="Path" value="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Umbrella_RC" />
+                                          <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                                        </Condition>
+                                        <Then>
+                                          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                            <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella Roaming Client deployment COMPLETE!" />
+                                          </Statement>
+                                        </Then>
+                                        <Else>
+                                          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                            <Parameter xsi:type="StringParameter" name="Comment" value="Error: Install completed but unable to detect presence of Umbrella service." />
+                                          </Statement>
+                                        </Else>
+                                      </If>
+                                    </Then>
+                                    <Else>
+                                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                        <Parameter xsi:type="StringParameter" name="Comment" value="Error: Umbrella zip written and extracted but Roamingclient_WIN.msi not present!" />
+                                      </Statement>
+                                    </Else>
+                                  </If>
+                                </Then>
+                                <Else>
+                                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                    <Parameter xsi:type="StringParameter" name="Comment" value="Error: Unable to write Umbrella agent. Is it present on the Kaseya Server?" />
+                                  </Statement>
+                                </Else>
+                              </If>
+                            </Then>
+                            <Else>
+                              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                                <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella Roaming Client is already installed!" />
+                              </Statement>
+                            </Else>
+                          </If>
+                        </Then>
+                        <Else>
+                          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                            <Parameter xsi:type="StringParameter" name="Comment" value="Error: ORG_ID Not defined!" />
+                          </Statement>
+                        </Else>
+                      </If>
+                    </Then>
+                    <Else>
+                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                        <Parameter xsi:type="StringParameter" name="Comment" value="Error: ORG_FINGERPRINT Not defined!" />
+                      </Statement>
+                    </Else>
+                  </If>
+                </Then>
+                <Else>
+                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Comment" value="Error: USER_ID Not defined!" />
+                  </Statement>
+                </Else>
+              </If>
+            </Then>
+            <Else>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Error: HIDE_ARP Not defined!" />
+              </Statement>
+            </Else>
+          </If>
+        </Then>
+        <Else>
+          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+            <Parameter xsi:type="StringParameter" name="Comment" value="Error: HIDE_UI Not defined!" />
+          </Statement>
+        </Else>
+      </If>
+    </Body>
+  </Procedure>
+</ScExport>
