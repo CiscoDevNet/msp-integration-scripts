@@ -1,0 +1,47 @@
+﻿<LabTech_Expansion
+	Version="230.392"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>7127</ScriptId>
+				<FolderId>393</FolderId>
+				<ScriptName>CW Uninstall Cisco Secure Client</ScriptName>
+				<ScriptNotes>Uninstall Cisco Secure Client - CM</ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>1</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAIWQTW/CMAyG75P2H6rc0ziFrawK4cAmLnAZCHHNUhciQVol6Vr+/UqmTd0uSJYs249ff4hFfzknn+i8qe2c8BTIQj4+iLXRaD2+qqA2dYnnZMCsL3pfzskphKZgrOu6tJuktTuyDICzw2a91Se8KPILm/swNdYHZTWSYWySiN21QckFiz5m3lu7rFsb0EkQbBTF6lvfGHfbEyUMwjTaDqCIJtioHvmtdqYJ+++Db4P+JkbMqjWlzBGUyrKKfvDZM53OOKeqmiDl05cKc/2EmMOPRmwYfsf+P09+ASeb1t9mAQAA</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAO2UTWvCQBCG74X+h8F7iImfhTQgSkUordTW+7oZ7cJmNuxukP77buKqq1DPPXjKvO98ZOYhJFtxLSo7Y5bljw8A2UGbVji5ZJqVaFEbiI/eXKoNk4Fx6Fm7IqEo72bxpXFRNa9FkY+wy1iabqNNMh5G/XGSRGzbwyjpP21xxAeIo9OUtqFdLQ538+NWFqvTshNum/clWewj77/U1OpF0eQCFR6ZnO9pdXqle1e6f6UHAQ+lbYuheXpvqsgKqrHxT7HPvZtXUYq25Rj6zIIKJMus5xrKEMmZwg0s6S0sw7+55PtScKi0KmpuYf+NGoHcR/HcmQrDFayQ186aSuF2gwgm9OMOJHTF6+VbBziTEmoSZKyLsthPvbNyrL7KjUYp2Z3SLUozwXakjBXcAKMCPrByHATt4FMp+W/ZHbX/uf4CY15IR2sFAAA=</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>7e0aa22f-b186-4811-af3e-149fe7c5ee70</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>393</FolderID>
+					<ParentID>392</ParentID>
+					<Name>Security</Name>
+					<GUID>7f17282f-769e-4dbd-823d-d6e9cd4381ae</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>392</FolderID>
+					<ParentID>0</ParentID>
+					<Name>Contuit</Name>
+					<GUID>967cd80b-f527-4095-b226-e82f5b9ed54d</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>

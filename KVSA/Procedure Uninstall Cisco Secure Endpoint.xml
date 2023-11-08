@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kaseya.com/vsa/2008/12/Scripting">
+  <Procedure name="Uninstall Cisco Secure Endpoint" treePres="3" id="906926222" folderId="340412799567176" treeFullPath="myProcedures - corey.mandell@contuit.com.Cisco Deliverables">
+    <Body description="">
+      <Statement description="Uninstall Umrella Roaming Client  -CM" name="ExecuteShellCommand" continueOnFail="false">
+        <Parameter xsi:type="StringParameter" name="Command" value="msiexec.exe /x  &quot;#vagentconfiguration.agenttempdir#\amp_Protect Cisco.msi&quot; /QN WRAPPED_ARGUMENTS=&quot;/remove 1&quot;" />
+        <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+        <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+      </Statement>
+    </Body>
+  </Procedure>
+</ScExport>

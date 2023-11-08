@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kaseya.com/vsa/2008/12/Scripting">
+  <Procedure name="Cisco Secure Cient Agent Install" treePres="3" id="653536983" folderId="340412799567176" treeFullPath="myProcedures - corey.mandell@contuit.com.Cisco Deliverables">
+    <Body description="">
+      <If description="Cisco Umbrella Roaming Client Install 3.0   - CM&#xD;&#xA;v3.2    10/02/2023&#xD;&#xA;Author Corey Mandell (Cisco Contractor) - New Version of Umbrella deploy as Secure Client 5.0&#xD;&#xA;Revisions:&#xD;&#xA;3.1 - added Registry Check&#xD;&#xA;3.2 - added full zip deploy (Umbrella 's new deployment methodology)&#xD;&#xA;3.3 - added a line to copy the OrgInfo.json into %ProgramData%\Cisco\Cisco Secure Client\Umbrella">
+        <Condition name="TestRegistryKey">
+          <Parameter xsi:type="StringParameter" name="Path" value="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\csc_umbrellaagent" />
+          <Parameter xsi:type="EnumParameter" name="Condition" value="NotExists" />
+        </Condition>
+        <Then>
+          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+            <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella Roaming Client not detected. Proceeding with installation..." />
+          </Statement>
+          <Statement name="WriteFile" continueOnFail="false">
+            <Parameter xsi:type="StringParameter" name="Path" value="#vAgentConfiguration.agentTempSecureDir#/cisco-secure-client-win-5.0.04032-predeploy-k9.zip" />
+            <Parameter xsi:type="StringParameter" name="ManagedFile" value="VSASharedFiles\Cisco Secure Client\cisco-secure-client-win-5.0.04032-predeploy-k9.zip" />
+            <Parameter xsi:type="BooleanParameter" name="DeleteAfter" value="False" />
+          </Statement>
+          <Statement name="Unzip file" continueOnFail="false">
+            <Parameter xsi:type="StringParameter" name="Parameter1" value="#vAgentConfiguration.agentTempSecureDir#/cisco-secure-client-win-5.0.04032-predeploy-k9.zip" />
+            <Parameter xsi:type="StringParameter" name="Parameter2" value="#vagentconfiguration.agenttempdir#/" />
+            <Parameter xsi:type="StringParameter" name="Parameter3" value="False" />
+          </Statement>
+          <If description="">
+            <Condition name="TestFile">
+              <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#\cisco-secure-client-win-5.0.04032-umbrella-predeploy-k9.msi" />
+              <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+              <Parameter xsi:type="StringParameter" name="Value" value="" />
+            </Condition>
+            <Then>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella agent written successfully." />
+              </Statement>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Running install command: msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\cisco-secure-client-win-5.0.04032-core-vpn-predeploy-k9.msi&quot; /QN , and  cisco-secure-client-win-5.0.04032-umbrella-predeploy-k9.msi, and cisco-secure-client-win-5.0.04032-dart-predeploy-k9.msi" />
+              </Statement>
+              <If description="">
+                <Condition name="TestFile">
+                  <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#\cisco-secure-client-win-5.0.04032-umbrella-predeploy-k9.msi" />
+                  <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                  <Parameter xsi:type="StringParameter" name="Value" value="" />
+                </Condition>
+                <Then>
+                  <Statement name="ExecuteShellCommand" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Command" value="msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\cisco-secure-client-win-5.0.04032-core-vpn-predeploy-k9.msi&quot; /QN " />
+                    <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+                    <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+                  </Statement>
+                  <Statement name="ExecuteShellCommand" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Command" value="msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\cisco-secure-client-win-5.0.04032-umbrella-predeploy-k9.msi&quot; /QN " />
+                    <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+                    <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+                  </Statement>
+                  <Statement name="ExecuteShellCommand" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Command" value="msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\cisco-secure-client-win-5.0.04032-dart-predeploy-k9.msi&quot; /QN " />
+                    <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+                    <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+                  </Statement>
+                  <Statement name="ExecuteShellCommand" continueOnFail="false">
+                    <Parameter xsi:type="StringParameter" name="Command" value="copy &quot;#vagentconfiguration.agenttempdir#\OrgInfo.json&quot; &quot;%ProgramData%\Cisco\Cisco Secure Client\Umbrella&quot;" />
+                    <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+                    <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+                  </Statement>
+                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Comment" value="Installation complete. Detecting if install was successful...." />
+                  </Statement>
+                  <If description="">
+                    <Condition name="TestRegistryKey">
+                      <Parameter xsi:type="StringParameter" name="Path" value="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\csc_umbrellaagent" />
+                      <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                    </Condition>
+                    <Then>
+                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                        <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella Roaming Client deployment COMPLETE!" />
+                      </Statement>
+                    </Then>
+                    <Else>
+                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                        <Parameter xsi:type="StringParameter" name="Comment" value="Error: Install completed but unable to detect presence of Umbrella service." />
+                      </Statement>
+                    </Else>
+                  </If>
+                </Then>
+                <Else>
+                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Comment" value="Error: Umbrella zip written and extracted but Roamingclient_WIN.msi not present!" />
+                  </Statement>
+                </Else>
+              </If>
+            </Then>
+            <Else>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Error: Unable to write Umbrella agent. Is it present on the Kaseya Server?" />
+              </Statement>
+            </Else>
+          </If>
+        </Then>
+        <Else>
+          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+            <Parameter xsi:type="StringParameter" name="Comment" value="Umbrella Roaming Client is already installed!" />
+          </Statement>
+        </Else>
+      </If>
+    </Body>
+  </Procedure>
+</ScExport>

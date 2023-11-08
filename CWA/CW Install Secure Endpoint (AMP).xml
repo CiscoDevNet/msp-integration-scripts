@@ -1,0 +1,95 @@
+﻿<LabTech_Expansion
+	Version="230.222"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>5961</ScriptId>
+				<FolderId>195</FolderId>
+				<ScriptName>Install Secure Endpoint (formerly AMP) CM v2.4</ScriptName>
+				<ScriptNotes>Created by Corey Mandell ( Cisco Contract )  [corey.mandell@contuit.com]
+Ver. 2
+ 
+Revisions: 
+2.0 Modified from Umbrella to Secure Client 5.0
+2.1 - added ZIP Install containing three required MSI files (added OrgInfo.Json)
+</ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>1</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAFWPzQrCMBCE74LvkAdoyG76YylLQFQEsRcV72mbQi5pSRuwb68tChUWlpnZj2HpamvjBnPUo1b0mHqjkMSy6RbcoQtuNF4BiZWi06u3fmaMKjvX6CliF+2C9hMDjBgAIMsLgM+wfUlidU/32tt+fBo/2M7NZf/GNz8H26gYMK4ylDyV0PIk0ZJXddrwDE2FKHdxm+U/fgFIrN/Zbt7br/kf3gAAAA==</LicenseData>
+				<ScriptData>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</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>3013b612-520f-44a2-bc5d-61eb11273f68</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<PackedScript>
+			<NewDataSet>
+				<Table>
+					<ScriptId>5959</ScriptId>
+					<FolderId>194</FolderId>
+					<ScriptName>Deploy Cisco Umbrella Root Certificate</ScriptName>
+					<ScriptNotes></ScriptNotes>
+					<Permission>0,</Permission>
+					<EditPermission>0,</EditPermission>
+					<ComputerScript>1</ComputerScript>
+					<LocationScript>0</LocationScript>
+					<MaintenanceScript>0</MaintenanceScript>
+					<FunctionScript>0</FunctionScript>
+					<LicenseData>H4sIAAAAAAAEAFWPwQrCMBBE74L/kA9o6CattJYlFxUvFkSL97VZIZe0pA3Yv5cWhXoaZmfewuDFtewHPtJIBpupZ6MwXRRv0R+66EcOBjBdOTy9exdmhk0TebA0JaKmSShIhAatRVHtVKX34lpjuirjvQ2uHx8cBtf5+ev/4Zufo7Pm9WRqmayEjEqpFFtJz4wkaABVQJnnOvvxC4Dpest28wG8TCqv2wAAAA==</LicenseData>
+					<ScriptData>H4sIAAAAAAAEAO2YX2vbMBDA3wf7DiLQR8eW7SROCIbg/iEwtrGwPRWCYsmtQLGCJHfdt5/syKmTNa4z7GaBPUV3Jym63+nukKeLWNCNukYKhR8/ADDdyrIQtHjzrATKrbeUMCyBXRq+IoHWRBFR0d0xvkKsothu9kNPojwN4dTeV+zNussoDpMVQTFB2HI8FFgQEmyhlYcsx3UcOHIC33e9cpdiQXFmu3pos91Ckc3Oi1mszAHMyOhvs7SQ5zi3VaSqk/DAafdA9g5k/0AeVHhwoUJHnzf/NbqIp4qmGcn1u7GxfZGf6JoWS8qhscxTTFKFCme0tSpWkbxQqMHi1mHxxsfBhJNr/jNlHOGICDW1jfbMsFz/fLQGfg2taHL/WdEn1AkoeEm3ynVq0i18VGojJ7aNvWEWYJI9P6DxivdjxjOcCO1MPyXKjvWVowmNkSLSjqiM+fL7eiUIY2j5jXO1jGZ9Ped12LtY3L+50t0PS87FjE4Jj3tJ4YGwyTV+G90hdOcI0sl8vdFwKkXkNLjeJcF16wpq9HKpATa1FSSIMoL74OaZal8egCz+F/AUECG46HdST/y2mcIumcLBu7XvQdtg3PO17z/yrt07NDwdleVCf+QH3tAPzlf+hjXM8raTKcqAhTCWigsCLH0MIjaCSj1OgPUEhC6FoNegUPY64T66pHo4cmpoX8lHjUwQmTF1daSrBEe6SrWW9ooQgDIEIA8BiGY9oINIMFAcFKHsv95+ykRZZHFMpDST/NoYBJcUg8Y9aduKcl60IAJoqseV+7/F+L6tavy/VR15E7T+1Dx7r9pPwZafUH/xhvoX+lXj7JVbeEnG2C+TwDqZG6VwN5kLW38WdZq6gxrQbadu62+aBqlbyuZr4G+b+aC2HBQAAA==</ScriptData>
+					<ScriptVersion>1</ScriptVersion>
+					<ScriptGuid>fbeacead-03a8-11ed-ab3a-020017084423</ScriptGuid>
+					<ScriptFlags>0</ScriptFlags>
+					<Parameters></Parameters>
+				</Table>
+			</NewDataSet>
+			<ScriptFolder>
+				<NewDataSet>
+					<Table>
+						<FolderID>194</FolderID>
+						<ParentID>192</ParentID>
+						<Name>Security</Name>
+						<GUID>0c1ecf51-e7ae-446f-8813-cd661c686740</GUID>
+					</Table>
+				</NewDataSet>
+			</ScriptFolder>
+			<ScriptFolder>
+				<NewDataSet>
+					<Table>
+						<FolderID>192</FolderID>
+						<ParentID>0</ParentID>
+						<Name>_Ntiva Automation</Name>
+						<GUID>1a03c0ba-7a9b-4753-b62f-c7edf70e3551</GUID>
+					</Table>
+				</NewDataSet>
+			</ScriptFolder>
+		</PackedScript>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>195</FolderID>
+					<ParentID>193</ParentID>
+					<Name>Security</Name>
+					<GUID>0341b540-280a-4a19-b957-422ffb8eed41</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>193</FolderID>
+					<ParentID>0</ParentID>
+					<Name>Contuit</Name>
+					<GUID>b0990044-63ff-4c6c-acb0-1475e3373f3d</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>

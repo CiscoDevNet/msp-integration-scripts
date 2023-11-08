@@ -1,0 +1,47 @@
+﻿<LabTech_Expansion
+	Version="230.392"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>7126</ScriptId>
+				<FolderId>393</FolderId>
+				<ScriptName>CW Uninstall Secure Endpoint</ScriptName>
+				<ScriptNotes>Uninstall Secure Endpoint - CM</ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>1</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAIWQTW/CMAyG75P4D1XuaVwIH6pCOAy0C1wGmriGxIxIkFZJunb/fiXTpm4XJEuW7cevP8Squ12zD/TBVm5JihzISo6exNZqdAHXKqpdZfCa9ZgLZRfMklxirEvG2rbN20le+Xc2BijYcbfd6wveFPmF7WOYWheichpJPzbLxOGzRlkIlnzKvDbuuWpcRC9BsEGUqpuutv6+J0rohWmyA0CZTLBBPfF77W0d374Pvg/6mxgwL401Us/PfDrTQKdYcMrBnOjpPBtT4AulFTcc5vCjkRr637H/z5NfXkDK5mYBAAA=</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAMWTT2uDMBjG74N9hyD0aKNdandwgthOCl3natddBiXGFALVSIyjH3+apjYV1usu8f097x/fPBA/JYJVco4lDh4fAPDPXCtoMcECF1RSUQN40eIjz/DREM49u7aI8TJwfHgr3FTFDcsDMjugqUcce0pdZCMnz+zs4E1sBz1jglGOnFk/RTWo1aC5mx6XSlr1y4ZEdv9zfagjrb82peJl3uUMMi/pXu+jeDLgpwGjAU8NP7iQyobuq7WIl5KVDe30Pta593rFCqZaLqHOLMuclhJL7auJpiVXF+7YMrlni/e3L0FRM3qiZNweAJ4AsEarbbqL5kyMvnFR7RPBJSUSRKwmfNxWWwB+rMHXJkySxXwfbuLPt8V6m75YUNCC/1DgWj7Uw//bsgvrF/ALK6zpyRADAAA=</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>c7f456c0-5e14-40db-bf62-048aca4d4070</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>393</FolderID>
+					<ParentID>392</ParentID>
+					<Name>Security</Name>
+					<GUID>7f17282f-769e-4dbd-823d-d6e9cd4381ae</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>392</FolderID>
+					<ParentID>0</ParentID>
+					<Name>Contuit</Name>
+					<GUID>967cd80b-f527-4095-b226-e82f5b9ed54d</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>

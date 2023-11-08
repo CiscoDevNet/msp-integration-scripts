@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kaseya.com/vsa/2008/12/Scripting">
+  <Procedure name="Cisco Secure Endpoint Install" treePres="3" id="1299393132" folderId="340412799567176" treeFullPath="myProcedures - corey.mandell@contuit.com.Cisco Deliverables">
+    <Body description="">
+      <If description="Cisco Secure Endpoint Client Install   - CM&#xD;&#xA;v1.2    10/06/2023&#xD;&#xA;Author Corey Mandell (Cisco Contractor) -  This script executes a Secure Endpoint (formerly AMP) MSI.  At the time of this script's creation, the MSI will need to be created via an  EXE to MSI wrapper product  such as https://www.exemsi.com/ .&#xD;&#xA;Revisions:&#xD;&#xA;1.1 - Creation &#xD;&#xA;1.2 - added registry detection for install">
+        <Condition name="TestRegistryKey">
+          <Parameter xsi:type="StringParameter" name="Path" value="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\CiscoAMP" />
+          <Parameter xsi:type="EnumParameter" name="Condition" value="NotExists" />
+        </Condition>
+        <Then>
+          <Statement name="WriteFile" continueOnFail="false">
+            <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#/amp_Protect Cisco.msi" />
+            <Parameter xsi:type="StringParameter" name="ManagedFile" value="VSASharedFiles\amp_Protect Cisco.msi" />
+            <Parameter xsi:type="BooleanParameter" name="DeleteAfter" value="False" />
+          </Statement>
+          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+            <Parameter xsi:type="StringParameter" name="Comment" value="Secure Endpoint Client not detected. Proceeding with installation..." />
+          </Statement>
+          <If description="">
+            <Condition name="TestFile">
+              <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#\amp_Protect Cisco.msi" />
+              <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+              <Parameter xsi:type="StringParameter" name="Value" value="" />
+            </Condition>
+            <Then>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Secure Endpoint Client written successfully." />
+              </Statement>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Running install command: msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\amp_Protect Cisco.msi&quot; " />
+              </Statement>
+              <If description="">
+                <Condition name="TestFile">
+                  <Parameter xsi:type="StringParameter" name="Path" value="#vagentconfiguration.agenttempdir#\amp_Protect Cisco.msi" />
+                  <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                  <Parameter xsi:type="StringParameter" name="Value" value="" />
+                </Condition>
+                <Then>
+                  <Statement name="ExecuteShellCommand" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Command" value="msiexec.exe /i &quot;#vagentconfiguration.agenttempdir#\amp_Protect Cisco.msi&quot; /QN WRAPPED_ARGUMENTS=&quot;/R /S /desktopicon 1&quot;" />
+                    <Parameter xsi:type="EnumParameter" name="ExecuteAccount" value="System" />
+                    <Parameter xsi:type="BooleanParameter" name="Is64Bit" value="False" />
+                  </Statement>
+                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Comment" value="Installation complete. Detecting if install was successful...." />
+                  </Statement>
+                  <If description="">
+                    <Condition name="TestRegistryKey">
+                      <Parameter xsi:type="StringParameter" name="Path" value="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\CiscoAMP" />
+                      <Parameter xsi:type="EnumParameter" name="Condition" value="Exists" />
+                    </Condition>
+                    <Then>
+                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                        <Parameter xsi:type="StringParameter" name="Comment" value="Secure Endpoint Client deployment COMPLETE!" />
+                      </Statement>
+                    </Then>
+                    <Else>
+                      <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                        <Parameter xsi:type="StringParameter" name="Comment" value="Error: Install completed but unable to detect presence of Secure Endpoint service." />
+                      </Statement>
+                    </Else>
+                  </If>
+                </Then>
+                <Else>
+                  <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                    <Parameter xsi:type="StringParameter" name="Comment" value="Error: Secure Endpoint Client written but Setup.msi not present!" />
+                  </Statement>
+                </Else>
+              </If>
+            </Then>
+            <Else>
+              <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+                <Parameter xsi:type="StringParameter" name="Comment" value="Error: Unable to write Secure Endpoint Client. Is it present on the Kaseya Server?" />
+              </Statement>
+            </Else>
+          </If>
+        </Then>
+        <Else>
+          <Statement name="WriteScriptLogEntry" continueOnFail="false" osType="Windows">
+            <Parameter xsi:type="StringParameter" name="Comment" value="Secure Endpoint Client is already installed!" />
+          </Statement>
+        </Else>
+      </If>
+    </Body>
+  </Procedure>
+</ScExport>
