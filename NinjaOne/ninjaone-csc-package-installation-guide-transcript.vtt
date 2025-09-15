@@ -1,0 +1,177 @@
+WEBVTT
+
+1 "Sunil Kumar Pabba" (941729792)
+00:00:04.109 --> 00:00:21.510
+Hi everyone, so today I want to show how to install Cisco Secure Client packages on a Windows machine through Ninza one so we can use ninza Van UI to install all the Cisco secure client packages. So to do that, we need a Windows machine.
+
+2 "Sunil Kumar Pabba" (941729792)
+00:00:21.510 --> 00:00:41.510
+And also from my laptop, I'll log into one UI and then you know we can try installing the Cisco secure client packages. But the step one is firstly we have to log into the target machine where we want to have all the Cisco secure client packages to be installed. We have to log into that instance and.
+
+3 "Sunil Kumar Pabba" (941729792)
+00:00:41.510 --> 00:00:48.570
+Can install the Ninsa one agent on that instance so that we can manage that instance through one UI.
+
+4 "Sunil Kumar Pabba" (941729792)
+00:00:48.570 --> 00:01:05.820
+From anywhere. So that's the, that's the step one. So to do that, so I need to go to the Windows machine. So this is the windows machine. So here if you see the IP address ten.0. 01:51 dot.
+
+5 "Sunil Kumar Pabba" (941729792)
+00:01:05.820 --> 00:01:25.820
+1808. So this is the target machine. So I already logged into this Ninzavan portal. So from here we have to download the Ninzavan agent onto the onto this machine 10.0.151.188 and then install the agent. So that we.
+
+6 "Sunil Kumar Pabba" (941729792)
+00:01:25.820 --> 00:01:43.560
+Then we can manage the instance, ok? So to do that, so we need to go to administration and then go to library and then go to automation.
+
+7 "Sunil Kumar Pabba" (941729792)
+00:01:43.560 --> 00:02:03.180
+I'm sorry downloads, 1 s, I'm sorry my bad, so you need to click this plus button, go to devices computer.
+
+8 "Sunil Kumar Pabba" (941729792)
+00:02:03.180 --> 00:02:21.750
+And then, so this is a Windows machine I'm trying to install. So you can select any of this. I'm selecting internal infrastructure as the organization, as an example, selecting main office, you can.
+
+9 "Sunil Kumar Pabba" (941729792)
+00:02:21.750 --> 00:02:41.520
+Select these options and then click generate installer. So click download. So this file has been downloaded on the target mission. So now you can double click.
+
+10 "Sunil Kumar Pabba" (941729792)
+00:02:41.520 --> 00:02:57.330
+So this is going to install the agent. Agent, ok, I think I double clicked, but.
+
+11 "Sunil Kumar Pabba" (941729792)
+00:02:57.330 --> 00:03:17.330
+This is installed. So if you go back and if you go to devices, ok, I don't see it here.
+
+12 "Sunil Kumar Pabba" (941729792)
+00:03:17.330 --> 00:03:20.940
+So once it is installed, you should be able to see it here.
+
+13 "Sunil Kumar Pabba" (941729792)
+00:03:20.940 --> 00:03:40.940
+So let me go to downloads.
+
+14 "Sunil Kumar Pabba" (941729792)
+00:03:40.940 --> 00:03:46.290
+So if I click this.
+
+15 "Sunil Kumar Pabba" (941729792)
+00:03:46.290 --> 00:04:06.290
+Then existing was being installed ok yeah I think it took some time to show up here. So you see this install the one which we just installed?
+
+16 "Sunil Kumar Pabba" (941729792)
+00:04:06.290 --> 00:04:23.040
+From the UI, so if I click this one, if I click view more and you are able to see this instance IP address, right? 10.0.151.11 88, ok?
+
+17 "Sunil Kumar Pabba" (941729792)
+00:04:23.040 --> 00:04:43.040
+So from now on we can manage this instance from anywhere. You have one UI access, you know, you, you will be able to manage this instance through one UI, ok? So right now I'm on the same instance, 10.0.151.188, so this is on the same instance. This.
+
+18 "Sunil Kumar Pabba" (941729792)
+00:04:43.040 --> 00:04:44.489
+UI has been opened.
+
+19 "Sunil Kumar Pabba" (941729792)
+00:04:44.489 --> 00:05:04.489
+And the next step is we need to install all the Cisco secure client packages into the UI portal, so that is 2nd step. So once you upload, you can, you know, start installing the packages on the target machine. So that will be the step three. So step two, we need to install the.
+
+20 "Sunil Kumar Pabba" (941729792)
+00:05:04.489 --> 00:05:23.249
+And we need to upload the installers, ok? So to upload all the installers, we need to go to administration, go to library, and then automation. So if you click add automation and then.
+
+21 "Sunil Kumar Pabba" (941729792)
+00:05:23.249 --> 00:05:40.499
+Installation. So I'll name Cisco secure client, probably VPN, ok? That's the one I want to upload. So you can click choose installer file.
+
+22 "Sunil Kumar Pabba" (941729792)
+00:05:49.799 --> 00:06:05.429
+Actually I don't have the installer uploaded onto this instance, but I have it in my local laptop. So this is my, the screen you are seeing here. So this is my local laptop.
+
+23 "Sunil Kumar Pabba" (941729792)
+00:06:05.429 --> 00:06:24.179
+I have already logged into the one, so here if I go to devices administration library, automation, click add automation, installation, Cisco secure client.
+
+24 "Sunil Kumar Pabba" (941729792)
+00:06:24.179 --> 00:06:44.179
+VPN. Now if I choose installer, so I have all the packages here so.
+
+25 "Sunil Kumar Pabba" (941729792)
+00:06:44.179 --> 00:07:01.349
+This is the VPN package upload, so I selected the file categories so we can do it as maintenance and then submit. So this is asking for MFA code.
+
+26 "Sunil Kumar Pabba" (941729792)
+00:07:14.069 --> 00:07:34.069
+So you can view the status here, which says processing and when it is processing it will be under review. Generally takes less than a minute.
+
+27 "Sunil Kumar Pabba" (941729792)
+00:07:34.069 --> 00:07:38.669
+So now if you go under automation and if you click, if you type.
+
+28 "Sunil Kumar Pabba" (941729792)
+00:07:38.669 --> 00:07:58.669
+CSC, this is the package we have just uploaded Cisco secure client VPN, ok? So likewise you can upload all the Cisco secure client packages into your one UI and then you know you can run the installation. So to make it easy, I have already installed.
+
+29 "Sunil Kumar Pabba" (941729792)
+00:07:58.669 --> 00:08:11.159
+I mean I have already uploaded all the installers here. If you can see Cisco secure client umbrella, Windows, VPN, ZDA, thousandeyes. I have uploaded all of them, ok? To make it easy.
+
+30 "Sunil Kumar Pabba" (941729792)
+00:08:11.159 --> 00:08:30.659
+Okay, so now we have to go to step three. So step three is we have to do the actual installation, right? So to do that, so go to excuse me 1 s.
+
+31 "Sunil Kumar Pabba" (941729792)
+00:08:33.989 --> 00:08:52.019
+So we need to go to devices and then click this one and then click automation and you need to click install application. So this is what we need to select, and then you can select which package you want to install, ok?
+
+32 "Sunil Kumar Pabba" (941729792)
+00:08:52.019 --> 00:09:09.089
+So I'll take this Cisco VPN. This is what we just have uploaded. I'll click this one and then you can run a system and if you have any parameters, you can pass them. So right now I don't have any parameters. I'll click it, I'll click run, ok?
+
+33 "Sunil Kumar Pabba" (941729792)
+00:09:09.089 --> 00:09:25.739
+So run. So once you click the run, you can see the activity here, what is going on? So now it says action set, start requested, ok? So the automation.
+
+34 "Sunil Kumar Pabba" (941729792)
+00:09:25.739 --> 00:09:42.599
+It started like it's going to install the VPN. Now it says it's completed and you can see the message as success, and if you want to see more log, you can do it, ok? And we have to wait one more minute to see one more step, ok?
+
+35 "Sunil Kumar Pabba" (941729792)
+00:09:59.789 --> 00:10:19.789
+So now you see the software is added, so you have to wait until this message, ok? So once you'll see all these four messages, start requested, started, and then once the installation is completed, you can see it as completed, and then you have to wait for the last message software added. So that's when the complete installation will be done, ok?
+
+36 "Sunil Kumar Pabba" (941729792)
+00:10:19.789 --> 00:10:36.689
+So you see, Cisco Connect anyconnect, right? So the VPN has been installed. So likewise you can install all the other packages, but let's verify on the windows machine whether this package has been installed or not, right?
+
+37 "Sunil Kumar Pabba" (941729792)
+00:10:36.689 --> 00:10:54.959
+So if I go to windows machine back to this windows machine, so 10.0.151.188, so this is where we are trying to install, right? The VPN. So now here if I type Cisco, you see Cisco secure client, so this is the VPN client for Cisco.
+
+38 "Sunil Kumar Pabba" (941729792)
+00:10:54.959 --> 00:11:14.489
+So now you see it's been installed remotely through, right? So likewise if I go back, I can install all the other packages, ok? So if I click automation, go to install application again. So now if I select umbrella.
+
+39 "Sunil Kumar Pabba" (941729792)
+00:11:16.289 --> 00:11:35.219
+And then choose run. So as I told previously I have already uploaded all these packages before this session, ok? You can upload all those packages from your, you know, local laptop.
+
+40 "Sunil Kumar Pabba" (941729792)
+00:11:35.219 --> 00:11:53.099
+You see this one? Cisco umbrella. So it says start requested, started and completed. Here you see the success message, but you also have to wait for the message software added. That's when the complete installation will be done.
+
+41 "Sunil Kumar Pabba" (941729792)
+00:11:53.099 --> 00:12:13.099
+Okay, so you have to wait for this message and then you install the other package, ok? So you have to wait for the complete installation of the package at a time, and then you can go to the other one, ok?
+
+42 "Sunil Kumar Pabba" (941729792)
+00:12:13.099 --> 00:12:17.849
+Yeah, so now you see software is added for Cisco secure client umbrella.
+
+43 "Sunil Kumar Pabba" (941729792)
+00:12:17.849 --> 00:12:37.849
+Okay, so likewise, you can install all the other packages as well. It's the similar process we have to do it. So I don't want to go over the same process for all the packages, but pretty much that's how we do. You can, you know, install ZTA thousand eyes.ISO posture and VM SBL.
+
+44 "Sunil Kumar Pabba" (941729792)
+00:12:37.849 --> 00:12:52.848
+So you can install all these packages in a similar way, ok? Yeah, so that's what I thought of showing you on this particular one. So thank you all. Bye.
